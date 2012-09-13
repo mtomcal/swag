@@ -97,7 +97,7 @@ Handlebars.registerHelper "eachProp", (obj, fn) ->
   key = undefined
   for key of obj
     if obj.hasOwnProperty(key)
-      buffer += fn(
+      buffer += options.fn(
         key: key
         value: obj[key]
       )
