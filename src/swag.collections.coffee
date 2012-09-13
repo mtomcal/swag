@@ -91,3 +91,14 @@ Handlebars.registerHelper 'eachIndex', (context, options) ->
     else
         ret = options.inverse(@)
     ret
+
+Handlebars.registerHelper "eachProp", (obj, fn) ->
+  buffer = ""
+  key = undefined
+  for key of obj
+    if obj.hasOwnProperty(key)
+      buffer += fn(
+        key: key
+        value: obj[key]
+      )
+  buffer
