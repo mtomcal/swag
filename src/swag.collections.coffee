@@ -92,7 +92,7 @@ Handlebars.registerHelper 'eachIndex', (context, options) ->
         ret = options.inverse(@)
     ret
 
-Handlebars.registerHelper "eachProp", (obj, fn) ->
+Handlebars.registerHelper "eachProp", (obj, options) ->
   buffer = ""
   key = undefined
   for key of obj
